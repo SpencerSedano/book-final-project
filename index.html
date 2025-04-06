@@ -1,13 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Book Search</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Booki</div>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for books..."
+          />
+          <button id="searchButton">Search</button>
+        </div>
+        <div class="auth-links">
+          <a href="#" id="login">Login</a>
+          <a href="#" id="register">Register</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="app">
+        <h1>Book Search</h1>
+        <div id="results"></div>
+      </div>
+    </main>
+    <!-- Modal for book details -->
+    <div id="bookModal" class="modal hidden">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <div class="modal-body">
+          <img id="modalCover" src="" alt="Book Cover" />
+          <div id="modalInfo">
+            <h2 id="modalTitle"></h2>
+            <p id="modalAuthor"></p>
+            <p id="modalYear"></p>
+            <p id="modalDescription"></p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
