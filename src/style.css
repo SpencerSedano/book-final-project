@@ -144,20 +144,27 @@
   background-color: white;
   padding: 2em;
   border-radius: 8px;
-  max-width: 800px;
-  width: 90%;
+  width: 100%;
   display: flex;
+  justify-content: center;
   gap: 2em;
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
 }
 
 .modal-body img {
   width: 200px;
   height: auto;
   border-radius: 8px;
+  padding: 0.5rem;
 }
 
 .modal-body #modalInfo {
   flex: 1;
+  padding: 0.5rem;
 }
 
 .close {
@@ -167,4 +174,37 @@
   font-size: 1.5em;
   cursor: pointer;
   color: black;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .book {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode .modal-content {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .search-bar input {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .search-bar button {
+  background-color: #444;
+}
+
+body.dark-mode .search-bar button:hover {
+  background-color: #555;
 }

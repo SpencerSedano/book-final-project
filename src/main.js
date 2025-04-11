@@ -8,6 +8,7 @@ const modalTitle = document.querySelector("#modalTitle");
 const modalAuthor = document.querySelector("#modalAuthor");
 const modalYear = document.querySelector("#modalYear");
 const modalDescription = document.querySelector("#modalDescription");
+const darkModeToggle = document.querySelector("#darkModeToggle");
 
 searchButton.addEventListener("click", async () => {
   const query = searchInput.value.trim();
@@ -80,6 +81,20 @@ function openModal(book) {
   bookModal.classList.remove("hidden");
 }
 
+// Close modal when clicking the "X" icon
 closeModal.addEventListener("click", () => {
   bookModal.classList.add("hidden");
+});
+
+// Close modal when clicking anywhere on the dim background
+bookModal.addEventListener("click", (event) => {
+  if (event.target === bookModal) {
+    bookModal.classList.add("hidden");
+  }
+});
+
+darkModeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  const isDarkMode = document.body.classList.contains("dark-mode");
+  darkModeToggle.textContent = isDarkMode ? "Light Mode" : "Dark Mode";
 });
